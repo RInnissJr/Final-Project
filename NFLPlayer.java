@@ -6,6 +6,9 @@
  *
  */
 package ToolKit;
+import java.util.ArrayList;
+import java.util.List; 
+import ToolKit.PlayerManager;
 
 public class NFLPlayer
 {
@@ -175,6 +178,39 @@ public class NFLPlayer
 		Comb = cmb;
 	}
 	}
+class PlayerManager 
+{
+	String playername;
+	int age;
+	double height;
+
+public void userInternalDatabase (PlayerManager info) {
+    this.playername = info.playername;
+    this.age = info.age;
+    this.height = info.height;
+}
+ArrayList <PlayerManager> InfoList = new ArrayList<PlayerManager> ();
+
+public void addUser(String i, int j, double k)
+{
+	PlayerManager newUser = new PlayerManager();
+    newUser.playername = i;
+    newUser.age = j;
+    newUser.height = k;
+    InfoList.add(newUser);
+}
+
+public Object findUsername(String a)  
+{    
+    for (int i=0; i <InfoList.size(); i++) {
+        if (InfoList.get(i).playername.equals(a)){
+             return "This user already exists in our database.";
+        }
+    }
+    return "User is not founded."; 
+}
+}
+
 	
 	
 	
