@@ -8,176 +8,220 @@
 package ToolKit;
 import java.util.ArrayList;
 import java.util.List; 
-import ToolKit.PlayerManager;
+
 
 public class NFLPlayer
 {
-	String name;
-	 public NFLPlayer(String name) 
-	 {
-	      this.name= name;
-	  }
+   abstract class nflPlayer
+   {
+	String Name;
 	int PlayerAge;
+	String gender;
+	String position;
+	int GamesPlayed;
+	double Sacked;
+	double AverageValue;
+	double Fumbles;
+	int UniformNumber;
+	double Rating;
+	int GamesStarted;
+	double Attempts;
+	double Yards;
+	double Average;
+	double Touchdowns;
+	double TotalTackles;
+	double Sakes;
+	double Saftey;
+	double PassesDefended;
+	double Interceptions;
+	double InsideOpponent20;
+	double InsideOpponent40;
+	double PlaysDefended;
+	double Assists;
+	double Comb;
+	double Longest;
+	double Lost;
+   }
+
+ public class offensivePlayer extends nflPlayer
+{
+	 public void name(String nme) 
+	 {
+	      Name= nme;
+	 }
 	 public void playerAge( int age ) 
 	 {
 	      PlayerAge = age;
 	 }
-	String gender;
+	
 	public void playerGender(String pg) 
 	{
 	   gender = pg;
 	}
-	String position;
+	
 	public void playerPosition(String pp) 
 	{
 	   position = pp;
 	}
-	int GamesPlayed;
+	
 	public void gamesPlayed(int gp) 
 	{
 	      GamesPlayed = gp;
 	}
-	int GamesStarted;
+	
 	public void gamesStarted(int gs) 
 	{
 	      GamesStarted = gs;
 	}
-	int UniformNumber;
+
 	public void uniformNumber(int uf) 
 	{
 	      UniformNumber = uf;
 	}
-	double AverageValue;
+
 	public void averageValue(double av) 
 	{
 	      AverageValue = av;
 	}
-	double PassesCompleted; // quarterback
-	public void passesCompleted(double pc) 
+	 public void sacked(double sk) 
+		{
+		      Sacked = sk;
+		}
+	 public void fumbles(double fmb) 
+		{
+		      Fumbles = fmb;
+		}
+	 public void rating(double rt) 
+		{
+		      Rating = rt;
+		}
+		public void lost(double lo) 
+		{
+		      Lost = lo;
+		}
+		public void attempts(double atm) 
+		{
+		      Attempts = atm;
+		}
+		public void longest(double lng) 
+		{
+		      Longest = lng;
+		}
+		public void yards(double yrd) 
+		{
+		      Yards = yrd;
+		}
+	 public void average(double avr) 
+		{
+		      Average = avr;
+		}
+	 public void touchdowns(double td) 
+		{
+		      Touchdowns = td;
+		}
+		public void interceptions(double inter) 
+		{
+		      Interceptions = inter;
+		}
+	   public void assists(double ast) 
+		{
+			Assists = ast;
+		}
+		public void comb(double cmb) 
+		{
+			Comb = cmb;
+		}	 
+}
+public class defensivePlayer extends nflPlayer
+{
+	 public void name(String nme) 
+	 {
+	      Name= nme;
+	 }
+	 public void playerAge( int age ) 
+	 {
+	      PlayerAge = age;
+	 }
+	
+	public void playerGender(String pg) 
 	{
-	      PassesCompleted = pc;
+	   gender = pg;
 	}
-	double PassesAttempted;
-	public void passesAttempted(double pa) 
+	
+	public void playerPosition(String pp) 
 	{
-	      PassesAttempted = pa;
+	   position = pp;
 	}
-	double PassesTouchdown;
-	public void passesTouchdown(double pt) 
+	
+	public void gamesPlayed(int gp) 
 	{
-	      PassesTouchdown = pt;
+	      GamesPlayed = gp;
 	}
-	double InterceptionsThrown;
-	public void interceptionsThrown(double it) 
+	
+	public void gamesStarted(int gs) 
 	{
-	      InterceptionsThrown = it;
+	      GamesStarted = gs;
 	}
-	double Sacked;
-	public void sacked(double sk) 
+
+	public void uniformNumber(int uf) 
 	{
-	      Sacked = sk;
+	      UniformNumber = uf;
 	}
-	double Fumbles;
-	public void fumbles(double fmb) 
+
+	public void averageValue(double av) 
 	{
-	      Fumbles = fmb;
+	      AverageValue = av;
 	}
-	double Rating;
-	public void rating(double rt) 
-	{
-	      Rating = rt;
-	}
-	double YardsGained;
-	public void yardsGained(double yg) 
-	{
-	      YardsGained = yg;
-	}
-	double YardsLostToSakes;
-	public void yardsLostToSakes(double ylts) 
-	{
-	      YardsLostToSakes = ylts;
-	}// quarterback
-	double Attempts;
 	public void attempts(double atm) 
 	{
 	      Attempts = atm;
 	}
-	double Yards;
 	public void yards(double yrd) 
 	{
 	      Yards = yrd;
 	}
-	double Average;
 	public void average(double avr) 
 	{
 	      Average = avr;
 	}
-	double Longest;
-	public void longest(double lng) 
-	{
-	      Longest = lng;
-	}
-	double Touchdowns;
 	public void touchdowns(double td) 
 	{
 	      Touchdowns = td;
 	}
-	double Losts;
-	public void losts(double lst) 
-	{
-	      Losts = lst;
-	}
-	double TotalTackles;
 	public void totalTackles(double tt) 
 	{
 	      TotalTackles = tt;
 	}
-	double Sakes;
 	public void sakes(double sk) 
 	{
 	      Sakes = sk;
 	}
-	double Saftey;
 	public void saftey(double sft) 
 	{
 	      Saftey = sft;
 	}
-	double PassesDefended;
 	public void passesdefended(double pd) 
 	{
 	      PassesDefended = pd;
 	}
-	double Interceptions;
-	public void interceptions(double inter) 
-	{
-	      Interceptions = inter;
-	}
-	double InsideOpponent20;
 	public void insideopponent20(double io20) 
 	{
 		InsideOpponent20 = io20;
 	}
-	double InsideOpponent40;
 	public void insideopponent40(double io40) 
 	{
 		InsideOpponent40 = io40;
 	}
-	double PlaysDefended;
 	public void playsDefended(double pdef) 
 	{
 		PlaysDefended = pdef;
 	}
-	double Assists;
 	public void assists(double ast) 
 	{
 		Assists = ast;
 	}
-	double Comb;
-	public void comb(double cmb) 
-	{
-		Comb = cmb;
-	}
-	}
+}
+abstract class playerManager{
 class PlayerManager 
 {
 	String playername;
@@ -214,48 +258,12 @@ class PlayerManager
 	double assists;
 	double comb;
 	
-	
-
-public void userInternalDatabase (PlayerManager info) 
-{
-    this.playername = info.playername;
-    this.age = info.age;
-    this.height = info.height;
-    this.gender= info.gender;
-    this.position=info.position;
-    this.gamesPlayed=info.gamesPlayed;
-    this.gamesStarted=info.gamesStarted;
-    this.uniformNumber=info.uniformNumber;
-    this.averageValue=info.averageValue;
-    this.passesComplete=info.passesComplete;
-    this.passesAttempt=info.passesAttempt;
-    this.touchdownPasses=info.touchdownPasses;
-    this.interceptionsThrown=info.interceptionsThrown;
-    this.sacked=info.sacked;
-    this.fumbles=info.fumbles;
-    this.rating=info.rating;
-    this.yardsGained=info.yardsGained;
-    this.yardsLostToSack=info.yardsLostToSack;
-    this.attempts=info.attempts;
-    this.yards=info.yards;
-    this.longest=info.longest;
-    this.totalTackles=info.totalTackles;
-    this.sakes=info.sakes;
-    this.saftey=info.saftey;
-    this.passesDefended=info.passesDefended;
-    this.interception= info.interception;
-    this.insideopponent20=info.insideopponent20;
-    this.insideopponent40=info.insideopponent40;
-    this.playsdefended=info.playsdefended;
-    this.assists=info.assists;
-    this.comb=info.comb;
-}
 
 ArrayList<PlayerManager> InfoList = new ArrayList<PlayerManager> ();
-
+public class offensivePlayer extends playerManager
+{
 public void addUser(String pn, int ag, double hei, String gen, String pos, int gp, int gs, int ufn,
-double av, double pc, double pa, double tdp, double ict, double sc, double fmb, double rt, double ydg,
-double ydlts, double att, double yds, double lng, double tt,double sks, double saf, double pssdef,
+double av, double sc, double fmb, double rt, double att, double yds, double lng, double tt,double sks, double saf,
 double inter, double inso20, double inso40, double pd, double asis, double com)
 {
 	PlayerManager newUser = new PlayerManager();
@@ -268,22 +276,15 @@ double inter, double inso20, double inso40, double pd, double asis, double com)
     newUser.gamesStarted=gs;
     newUser.uniformNumber=ufn;
     newUser.averageValue=av;
-    newUser.passesComplete=pc;
-    newUser.passesAttempt=pa;
-    newUser.touchdownPasses=tdp;
-    newUser.interceptionsThrown=ict;
     newUser.sacked=sc;
     newUser.fumbles=fmb;
     newUser.rating=rt;
-    newUser.yardsGained=ydg;
-    newUser.yardsLostToSack=ydlts;
     newUser.attempts=att;
     newUser.yards=yds;
     newUser.longest=lng;
     newUser.totalTackles=tt;
     newUser.sakes=sks;
     newUser.saftey=saf;
-    newUser.passesDefended=pssdef;
     newUser.interception= inter;
     newUser.insideopponent20=inso20;
     newUser.insideopponent40=inso40;
@@ -291,6 +292,41 @@ double inter, double inso20, double inso40, double pd, double asis, double com)
     newUser.assists=asis;
     newUser.comb=com;
     InfoList.add(newUser);
+}
+}
+public class defensivePLayer extends playerManager
+{
+public void addUser(String pn, int ag, double hei, String gen, String pos, int gp, int gs, int ufn,
+double av, double sc, double fmb, double rt, double att, double yds, double lng, double tt,double sks, double saf,
+double inter, double inso20, double inso40, double pd, double asis, double com)
+{
+	PlayerManager newUser = new PlayerManager();
+    newUser.playername = pn;
+    newUser.age = ag;
+    newUser.height = hei;
+    newUser.gender=gen;
+    newUser.position=pos;
+    newUser.gamesPlayed=gp;
+    newUser.gamesStarted=gs;
+    newUser.uniformNumber=ufn;
+    newUser.averageValue=av;
+    newUser.sacked=sc;
+    newUser.fumbles=fmb;
+    newUser.rating=rt;
+    newUser.attempts=att;
+    newUser.yards=yds;
+    newUser.longest=lng;
+    newUser.totalTackles=tt;
+    newUser.sakes=sks;
+    newUser.saftey=saf;
+    newUser.interception= inter;
+    newUser.insideopponent20=inso20;
+    newUser.insideopponent40=inso40;
+    newUser.playsdefended=pd;
+    newUser.assists=asis;
+    newUser.comb=com;
+    InfoList.add(newUser);
+}
 }
 public ArrayList<PlayerManager> getUser()
 {
@@ -308,7 +344,8 @@ public Object findUsername(String a)
     return "User is not founded."; 
 }
 }
-
+}
+}
 	
 	
 	
