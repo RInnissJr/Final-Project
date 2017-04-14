@@ -8,6 +8,7 @@
 package ToolKit;
 import java.util.ArrayList;
 import java.util.List; 
+import java.util.Random;
 
 
 public class NFLPlayer
@@ -42,8 +43,12 @@ public class NFLPlayer
 	double Longest;
 	double Lost;
    }
+ interface Celebrator
+ {
+	 public void celebrate();
+ }
 
- public class offensivePlayer extends nflPlayer
+ public class offensivePlayer extends nflPlayer implements Celebrator
 {
 	 public void name(String nme) 
 	 {
@@ -130,10 +135,26 @@ public class NFLPlayer
 		public void comb(double cmb) 
 		{
 			Comb = cmb;
+		}
+		public void celebrate()
+		{
+		   String [] celebrations  = {"dances to celebrate his draft"," takes his family out to diner to celebrate his draft","jumps up and down with joy to celebrate his draft"
+				   ,"goes for a car ride to celebrate his draft","gives thanks to god for being drafted","buys a new car to celebrate his draft"};
+		   Random random = new Random();
+		   int select = random.nextInt(celebrations.length); 
+		   System.out.println(Name + celebrations[select]); 
 		}	 
 }
-public class defensivePlayer extends nflPlayer
+public class defensivePlayer extends nflPlayer implements Celebrator
 {
+	public void celebrate()
+	{
+	   String [] celebrations  = {"dances to celebrate his draft"," takes his family out to diner to celebrate his draft","jumps up and down with joy to celebrate his draft"
+			   ,"goes for a car ride to celebrate his draft","gives thanks to god for being drafted","buys a new car to celebrate his draft"};
+	   Random random = new Random();
+	   int select = random.nextInt(celebrations.length); 
+	   System.out.println(Name + celebrations[select]); 
+	}	
 	 public void name(String nme) 
 	 {
 	      Name= nme;
@@ -260,8 +281,16 @@ class PlayerManager
 	
 
 ArrayList<PlayerManager> InfoList = new ArrayList<PlayerManager> ();
-public class offensivePlayer extends playerManager
+public class offensivePlayer extends playerManager implements Celebrator
 {
+	public void celebrate()
+	{
+	   String [] celebrations  = {"dances to celebrate his draft"," takes his family out to diner to celebrate his draft","jumps up and down with joy to celebrate his draft"
+			   ,"goes for a car ride to celebrate his draft","gives thanks to god for being drafted","buys a new car to celebrate his draft"};
+	   Random random = new Random();
+	   int select = random.nextInt(celebrations.length); 
+	   System.out.println(playername + celebrations[select]); 
+	}	
 public void addUser(String pn, int ag, double hei, String gen, String pos, int gp, int gs, int ufn,
 double av, double sc, double fmb, double rt, double att, double yds, double lng, double tt,double sks, double saf,
 double inter, double inso20, double inso40, double pd, double asis, double com)
@@ -294,8 +323,16 @@ double inter, double inso20, double inso40, double pd, double asis, double com)
     InfoList.add(newUser);
 }
 }
-public class defensivePLayer extends playerManager
+public class defensivePLayer extends playerManager implements Celebrator
 {
+	public void celebrate()
+	{
+	   String [] celebrations  = {"dances to celebrate his draft"," takes his family out to diner to celebrate his draft","jumps up and down with joy to celebrate his draft"
+			   ,"goes for a car ride to celebrate his draft","gives thanks to god for being drafted","buys a new car to celebrate his draft"};
+	   Random random = new Random();
+	   int select = random.nextInt(celebrations.length); 
+	   System.out.println(playername + celebrations[select]); 
+	}	
 public void addUser(String pn, int ag, double hei, String gen, String pos, int gp, int gs, int ufn,
 double av, double sc, double fmb, double rt, double att, double yds, double lng, double tt,double sks, double saf,
 double inter, double inso20, double inso40, double pd, double asis, double com)
